@@ -21,6 +21,7 @@ print(np.inner(a, b))
 print(np.outer(a, b))
 print(np.multiply(a, b))
 
+
 #Obter Sets
 print(np.unique(b))
 
@@ -42,6 +43,6 @@ print(np.linalg.eigvals(newarr))
 print(np.linalg.eig(newarr))
 
 #Funções Random
-
 x = np.random.poisson(lam=2, size=10)
 print(x)
+
