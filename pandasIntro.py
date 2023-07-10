@@ -8,7 +8,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #Importar datasets
-df = pd.read_csv('dataScienceIntro/data.csv')
+df = pd.read_csv('data.csv')
+print(type(df))
 print(df)
 print(df.to_string())
 
@@ -16,9 +17,9 @@ print(df.head(10))
 print(df.tail())
 
 #Exportar e importar ficheiros excel (index=False -> não exporta o index para o ficheiro excel)
-#df.to_excel('dataScienceIntro/data.xlsx')
-df.to_excel('dataScienceIntro/data.xlsx', index=False)
-df=pd.read_excel('dataScienceIntro/data.xlsx')
+#df.to_excel('data.xlsx')
+df.to_excel('data.xlsx', index=False)
+df=pd.read_excel('data.xlsx')
 
 #Informação e Estatistica do DF
 print(df.info()) 
