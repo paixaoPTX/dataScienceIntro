@@ -9,7 +9,7 @@ from sklearn import linear_model
 import matplotlib.pyplot as plt
 
 #Importar dados
-df = pd.read_csv("dataScienceIntro/carros.csv")
+df = pd.read_csv("data/carros.csv")
 df.describe()
 
 #Dividir variáveis independentes e dependente/resposta
