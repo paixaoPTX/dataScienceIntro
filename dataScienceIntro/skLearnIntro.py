@@ -16,13 +16,21 @@ df.describe()
 X = df[['Weight', 'Volume']]
 y = df['CO2']
 
+X.hist()
+plt.show()
+
+y.hist()
+plt.show()
+
 #Treinar o modelo
 regr = linear_model.LinearRegression()
 regr.fit(X, y)
 
+
 #Obter previsão
 predictedCO2 = regr.predict([[2300, 1300]])
 print(predictedCO2)
+
 
 #Obter interceção e coeficientes
 print(regr.intercept_)
@@ -35,11 +43,15 @@ from sklearn.cluster import KMeans
 x = [4, 5, 10, 4, 3, 11, 14 , 6, 10, 12]
 y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
 data = list(zip(x, y))
+data
 plt.scatter(x, y)
 plt.show()
 
 kmeans = KMeans(n_clusters=2)
+#kmeans = KMeans(n_clusters=2, verbose=1)
 kmeans.fit(data)
+
+kmeans.labels_
 
 plt.scatter(x, y, c=kmeans.labels_)
 plt.show() 

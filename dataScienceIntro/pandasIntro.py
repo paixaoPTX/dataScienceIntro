@@ -48,8 +48,8 @@ print(df.loc[91])
 df.plot()
 plt.show()
 
-df.plot(subplots=True, sharex=True, sharey=False, figsize=(32, 60), fontsize=32)
-[ax.legend(loc = 2, fontsize =  10) for ax in plt.gcf().axes]
+df.plot(subplots=True, sharex=True, sharey=False, figsize=(12, 10), fontsize=12)
+[ax.legend(loc = 2, fontsize =  8) for ax in plt.gcf().axes]
 plt.show()
 
 df["Calories"].plot(kind='hist')
@@ -85,6 +85,11 @@ df.dot(other)
 alunos = pd.DataFrame([["António", 1112], ["José", 1112], ["Sofia", 1112], ["Sofia", 1113], ["Sofia", 1114]], columns=["aluno", "codigoUC"])
 ucs = pd.DataFrame([[1111, "Java"], [1112, "Python"], [1113, "Python Avançado"]], columns=["codigoUC", "nomeUC"])
 pd.merge(alunos, ucs, on  = ["codigoUC"], how="inner")
+pd.merge(alunos, ucs, on  = ["codigoUC"], how="right")
+pd.merge(alunos, ucs, on  = ["codigoUC"], how="left")
+pd.merge(alunos, ucs, on  = ["codigoUC"], how="outer")
+pd.merge(alunos, ucs, how="cross")
+
 
 #Exemplo Pivot Tables
 import numpy as np
@@ -101,6 +106,12 @@ pivot_count = pd.pivot_table(df, values='Quantity', index='Category', columns='Y
 print(pivot_count)
 pivot_mean = pd.pivot_table(df, values='Quantity', index='Category', columns='Year', aggfunc=np.mean)
 print(pivot_mean)
+pivot_max = pd.pivot_table(df, values='Quantity', index='Category', columns='Year', aggfunc=np.max)
+print(pivot_mean)
+pivot_min = pd.pivot_table(df, values='Quantity', index='Category', columns='Year', aggfunc=np.min)
+print(pivot_mean)
+pivot_mean2 = pd.pivot_table(df, values='Quantity', index='Year', columns='Category', aggfunc=np.mean)
+print(pivot_mean2)
 pivot = pd.pivot_table(df, values='Quantity', index='Category', columns='Year',
                              aggfunc=['count', np.sum])
 print(pivot)
