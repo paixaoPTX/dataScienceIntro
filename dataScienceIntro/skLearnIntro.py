@@ -17,8 +17,7 @@ X = df[['Weight', 'Volume']]
 y = df['CO2']
 
 #Treinar o modelo
-regr = linear_model.LinearRegression()
-regr.fit(X, y)
+regr = linear_model.LinearRegression().fit(X, y)
 
 #Obter previsão
 predictedCO2 = regr.predict([[2300, 1300]])
@@ -28,18 +27,26 @@ print(predictedCO2)
 print(regr.intercept_)
 print(regr.coef_)
 
+#y' = B0 + B1X1 + B2X2
+
 
 #Exemplo de clustering
 from sklearn.cluster import KMeans
 
 x = [4, 5, 10, 4, 3, 11, 14 , 6, 10, 12]
 y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
+
 data = list(zip(x, y))
+data
+
+
 plt.scatter(x, y)
 plt.show()
 
-kmeans = KMeans(n_clusters=2)
+kmeans = KMeans(n_clusters=3, verbose=1)
 kmeans.fit(data)
+
+kmeans.labels_
 
 plt.scatter(x, y, c=kmeans.labels_)
 plt.show() 
