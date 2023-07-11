@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #Importar datasets
-df = pd.read_csv('data.csv')
+df = pd.read_csv('data/data.csv')
 print(type(df))
 print(df)
 print(df.to_string())
@@ -18,8 +18,8 @@ print(df.tail())
 
 #Exportar e importar ficheiros excel (index=False -> não exporta o index para o ficheiro excel)
 #df.to_excel('data.xlsx')
-df.to_excel('data.xlsx', index=False)
-df=pd.read_excel('data.xlsx')
+df.to_excel('data/data.xlsx', index=False)
+df=pd.read_excel('data/data.xlsx')
 
 #Informação e Estatistica do DF
 print(df.info()) 
